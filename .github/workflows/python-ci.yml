@@ -1,0 +1,38 @@
+# .github/workflows/python-ci.yml
+
+name: Python CI # The name of our workflow
+
+# 1. When to run the workflow
+on:
+  push:
+    branches: [ "main" ] # Run on pushes to the main branch
+  pull_request:
+    branches: [ "main" ] # Also run on pull requests to the main branch
+
+# 2. What jobs to run
+jobs:
+  build:
+    runs-on: ubuntu-latest # Use a fresh, clean virtual machine (Ubuntu)
+
+    # 3. The steps to perform in the job
+    steps:
+      # First, get a copy of your code from the repository
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # Set up the specific version of Python we need
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.9
+
+      # Install the project dependencies from requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Finally, run the tests!
+      - name: Run tests with pytest
+        run: |
+          pytest
