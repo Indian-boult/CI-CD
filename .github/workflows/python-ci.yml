@@ -40,6 +40,7 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
       # Finally, run the tests!
-      - name: Run tests with pytest
+      - name: Test with pytest and generate coverage report
         run: |
-          pytest
+          coverage run -m pytest
+          coverage report -m
