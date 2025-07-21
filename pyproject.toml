@@ -1,0 +1,20 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simple-ci-cd-calculator"
+version = "0.0.1"
+authors = [
+  { name="Indian Boult", email="boultindian@gmail.com" },
+]
+description = "A simple calculator package for learning CI/CD."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
