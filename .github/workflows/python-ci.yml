@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install .
+          # This single command installs your package AND its test dependencies
+          pip install .[test]
 
       - name: Lint with flake8
         run: |
