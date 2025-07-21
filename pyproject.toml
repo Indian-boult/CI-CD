@@ -13,11 +13,13 @@ authors = [
 description = "A simple calculator package for learning CI/CD."
 readme = "README.md"
 requires-python = ">=3.7"
-# This key tells setuptools exactly which module to include
-py_modules = ["calculator"]
-# This is the modern way to define the license
 license = { text = "MIT License" }
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
+
+# Add this new section for setuptools-specific configuration
+[tool.setuptools]
+# Move the py_modules key from [project] to here
+py_modules = ["calculator"]
