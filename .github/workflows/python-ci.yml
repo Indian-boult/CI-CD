@@ -4,9 +4,13 @@ name: Python CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - "main"
+    tags:
+      - 'v*.*.*' # Run on tags like v1.2.3
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - "main"
 
 jobs:
   # The Build & Test job remains the same
