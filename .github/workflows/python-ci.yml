@@ -44,7 +44,7 @@ jobs:
       - name: Post Coverage Comment on PR
         # This step only runs for pull request events
         if: github.event_name == 'pull_request'
-        uses: py-cov-action/python-coverage-comment-action@v4
+        uses: py-cov-action/python-coverage-comment-action@v3
         with:
           # Tell the action where to find the coverage report
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
