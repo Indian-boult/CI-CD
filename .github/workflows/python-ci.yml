@@ -39,7 +39,8 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Test with pytest and generate coverage report
-        run: pytest --cov --cov-report=xml
+        run: PYTHONPATH=src pytest --cov=src --cov-report=xml
+    
 
       - name: Post Coverage Comment on PR
         if: github.event_name == 'pull_request'
