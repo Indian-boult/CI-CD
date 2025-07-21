@@ -4,7 +4,7 @@ Main application file for the calculator project.
 This demonstrates how the calculator module can be used in a real application.
 """
 
-from calculator import add, subtract, multiply, divide, power
+from src.calculator import add, subtract, multiply, divide, power
 
 
 def main():

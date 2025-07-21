@@ -19,6 +19,12 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
 [tool.setuptools.packages.find]
 # Tell setuptools to look for package code in the 'src' directory
 where = ["src"]
