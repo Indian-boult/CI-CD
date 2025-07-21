@@ -1,12 +1,10 @@
 # .coveragerc
 
 [run]
-# This is the key fix: forces coverage to use relative paths.
 relative_files = true
-# Tells coverage to measure everything in the current directory.
-source = .
+# Tell coverage to measure the code inside 'src'
+source = src
 
 [report]
-# Excludes the test files from the coverage report itself.
 omit =
     test_*.py

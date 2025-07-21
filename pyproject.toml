@@ -19,7 +19,6 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
-# Add this new section for setuptools-specific configuration
-[tool.setuptools]
-# Move the py_modules key from [project] to here
-py_modules = ["calculator"]
+[tool.setuptools.packages.find]
+# Tell setuptools to look for package code in the 'src' directory
+where = ["src"]
