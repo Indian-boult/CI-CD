@@ -93,4 +93,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## Author
 
-- [Your Name](https://github.com/yourusername)
+- [Indian Boult](https://github.com/Indian-boult/CI-CD)
