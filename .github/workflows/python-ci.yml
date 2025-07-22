@@ -48,7 +48,6 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  # ⬇️ ADD THIS NEW PUBLISH JOB ⬇️
   publish:
     # This job only runs when a tag is pushed
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')

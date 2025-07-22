@@ -1,89 +1,96 @@
-# Calculator Project - CI/CD Learning
 
-This is a simple Python calculator project designed to learn and demonstrate CI/CD (Continuous Integration/Continuous Deployment) concepts.
+---
 
-## Project Structure
+## Installation
 
-```
-ci-cd/
-├── calculator.py      # Main calculator module
-├── test_calculator.py # Unit tests
-├── main.py           # Application entry point
-├── requirements.txt  # Project dependencies
-└── README.md        # This file
-```
+### From Source
 
-## Features
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/simple-ci-cd-calculator.git
+   cd simple-ci-cd-calculator
+   ```
 
-- Basic arithmetic operations (add, subtract, multiply, divide, power)
-- Comprehensive unit tests
-- Error handling (division by zero)
-- Clean, documented code
+2. Install with test and lint dependencies:
+   ```sh
+   pip install ".[test, lint]"
+   ```
 
-## Getting Started
+### From TestPyPI (for published releases)
 
-### Prerequisites
+1. Install from TestPyPI:
+   ```sh
+   pip install --index-url https://test.pypi.org/simple/ simple-ci-cd-calculator
+   ```
 
-- Python 3.7+
-- Anaconda (as you mentioned you're using it)
+---
 
-### Installation
+## Usage
 
-1. Clone this repository:
-```bash
-git clone <your-repo-url>
-cd ci-cd
-```
+```python
+from calculator import add, subtract, multiply, divide
 
-2. Create a conda environment:
-```bash
-conda create -n calculator-ci-cd python=3.9
-conda activate calculator-ci-cd
+print(add(2, 3))        # 5
+print(subtract(5, 2))   # 3
+print(multiply(3, 4))   # 12
+print(divide(10, 2))    # 5.0
 ```
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
+---
+
+## Running Tests
+
+```sh
+pytest
 ```
 
-### Running the Application
+---
 
-```bash
-python main.py
+## Linting
+
+```sh
+flake8 src/
 ```
 
-### Running Tests
+---
 
-```bash
-# Using unittest (built-in)
-python -m unittest test_calculator.py
+## Continuous Integration / Continuous Deployment
 
-# Using pytest (if installed)
-pytest test_calculator.py
-```
+- **Linting and tests** run automatically on every push and pull request to `main`.
+- **Coverage reports** are posted as comments on pull requests.
+- **Publishing** to [TestPyPI](https://test.pypi.org/) happens automatically when you push a tag like `v1.2.3` to the repository.
 
-## CI/CD Concepts We'll Learn
+### To publish a new release:
 
-### Continuous Integration (CI)
-- **Automated Testing**: Every code change triggers automatic test runs
-- **Code Quality Checks**: Linting, formatting, and style checks
-- **Build Verification**: Ensuring code compiles and runs correctly
-- **Early Bug Detection**: Catching issues before they reach production
+1. Bump the version in `pyproject.toml`.
+2. Commit and push your changes.
+3. Create and push a new tag:
+   ```sh
+   git tag v1.2.3
+   git push origin v1.2.3
+   ```
 
-### Continuous Deployment (CD)
-- **Automated Deployment**: Code changes automatically deploy to staging/production
-- **Environment Management**: Consistent environments across development stages
-- **Rollback Capability**: Quick rollback to previous versions if issues arise
-- **Zero-Downtime Deployments**: Deploying without service interruption
+---
 
-## Next Steps
+## License
 
-In the upcoming sections, we'll set up:
-1. **GitHub Actions** for CI/CD automation
-2. **Code quality checks** (linting, formatting)
-3. **Test automation** and coverage reporting
-4. **Deployment pipelines** to different environments
+MIT License
+
+---
 
 ## Contributing
 
-This project is designed for learning purposes. Feel free to experiment with different CI/CD configurations and add new features to practice the concepts. 
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## Security
+
+- API tokens and secrets are stored securely in GitHub Actions secrets.
+- Publishing uses trusted PyPI publishing with OpenID Connect.
+
+---
+
+## Author
+
+- [Your Name](https://github.com/yourusername)
