@@ -16,7 +16,7 @@
    pip install ".[test, lint]"
    ```
 
-### From TestPyPI (for published releases)
+### From TestPyPI
 
 1. Install from TestPyPI:
    ```sh
